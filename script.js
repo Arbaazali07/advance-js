@@ -222,29 +222,47 @@
 
 // }, 2000); // homework time
 
-function finishHomework(callback) {
-  console.log("Starting homework...");
+// function finishHomework(callback) {
+//   console.log("Starting homework...");
+//   setTimeout(() => {
+//     console.log("Homework done!");
+//     callback();
+//   }, 2000);
+// }
+
+// function eatDinner(callback) {
+//   console.log("Starting dinner...");
+//   setTimeout(() => {
+//     console.log("Dinner done!");
+//     callback();
+//   }, 1500);
+// }
+
+// function goToPlayground() {
+//   console.log("Going to the playground!");
+// }
+
+// // Chained in steps, but cleaner
+// finishHomework(() => {
+//   eatDinner(() => {
+//     goToPlayground();
+//   });
+// });
+
+const homeworkPromise = new Promise((resolve, reject) => {
+  console.log("I promise to do my homework by tomorrow.");
+
   setTimeout(() => {
-    console.log("Homework done!");
-    callback();
-  }, 2000);
-}
+    const didHomework = true;
 
-function eatDinner(callback) {
-  console.log("Starting dinner...");
-  setTimeout(() => {
-    console.log("Dinner done!");
-    callback();
-  }, 1500);
-}
-
-function goToPlayground() {
-  console.log("Going to the playground!");
-}
-
-// Chained in steps, but cleaner
-finishHomework(() => {
-  eatDinner(() => {
-    goToPlayground();
-  });
+    if (didHomework) {
+      resolve("I finished my homework and submitted it!");
+    } else {
+      reject("I forgot to do my homework.");
+    }
+  }, 3000);
 });
+
+console.log(" Waiting for the homework to finish...");
+
+console.log(homeworkPromise); 
