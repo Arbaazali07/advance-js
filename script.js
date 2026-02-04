@@ -249,20 +249,39 @@
 //   });
 // });
 
-const homeworkPromise = new Promise((resolve, reject) => {
-  console.log("I promise to do my homework by tomorrow.");
-
-  setTimeout(() => {
-    const didHomework = true;
-
-    if (didHomework) {
-      resolve("I finished my homework and submitted it!");
-    } else {
-      reject("I forgot to do my homework.");
+const p=new Promise((resolve,reject)=> {
+  let done = true;
+  setTimeout(()=> {
+    if (done){
+      resolve("Work has been done")
+    }else{
+      reject("Work has not been completed")
     }
-  }, 3000);
-});
+    //reject()
+  },5000)
+})
+p.then((data)=>{
+  console.log(data.name)
+}).catch((err)=>{
+  console.log(err)
+}).finally(()=>{
+  console.log("finally block")
+})
 
-console.log(" Waiting for the homework to finish...");
+// const homeworkPromise = new Promise((resolve, reject) => {
+//   console.log("I promise to do my homework by tomorrow.");
 
-console.log(homeworkPromise); 
+//   setTimeout(() => {
+//     const didHomework = true;
+
+//     if (didHomework) {
+//       resolve("I finished my homework and submitted it!");
+//     } else {
+//       reject("I forgot to do my homework.");
+//     }
+//   }, 3000);
+// });
+
+// console.log(" Waiting for the homework to finish...");
+
+// console.log(homeworkPromise); 
