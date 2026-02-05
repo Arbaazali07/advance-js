@@ -1,4 +1,4 @@
-   // let obj={
+// let obj={
 //     name:"Devendra",
 //     address:"Gurgaon",
 //     age:23
@@ -249,24 +249,27 @@
 //   });
 // });
 
-const p=new Promise((resolve,reject)=> {
-  let done = true;
-  setTimeout(()=> {
-    if (done){
-      resolve("Work has been done")
-    }else{
-      reject("Work has not been completed")
-    }
-    //reject()
-  },5000)
-})
-p.then((data)=>{
-  console.log(data.name)
-}).catch((err)=>{
-  console.log(err)
-}).finally(()=>{
-  console.log("finally block")
-})
+// console.log("Before promise")
+// const p=new Promise((resolve,reject)=> {
+// let done = true;
+// setTimeout(()=> {
+//   if (done){
+//     resolve("Work has been done")
+//   }else{
+//     reject("Work has not been completed")
+//   }
+//   //reject()
+// },5000)
+// })
+// console.log(p)
+// p.then((data)=>{
+//   console.log(data.name)
+// }).catch((err)=>{
+//   console.log(err)
+// }).finally(()=>{
+//   console.log("finally block")
+// })
+// console.log("After promise")
 
 // const homeworkPromise = new Promise((resolve, reject) => {
 //   console.log("I promise to do my homework by tomorrow.");
@@ -285,3 +288,18 @@ p.then((data)=>{
 // console.log(" Waiting for the homework to finish...");
 
 // console.log(homeworkPromise); 
+
+function doHomework() {
+  const p = new Promise((res, ret) => {
+    let done = true;
+    setTimeout(() => {
+      if (Done) {
+        console.log("Homework completed");
+        res("Homework is done");
+      } else {
+        rej("Homework not completed");
+      }
+    }, 3000);
+  })
+  return p
+}
