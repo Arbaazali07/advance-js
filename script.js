@@ -293,7 +293,7 @@ function doHomework() {
   const p = new Promise((res, ret) => {
     let done = true;
     setTimeout(() => {
-      if (Done) {
+      if (done) {
         console.log("Homework completed");
         res("Homework is done");
       } else {
@@ -303,3 +303,47 @@ function doHomework() {
   })
   return p
 }
+
+function eatDinner() {
+  const p = new Promise((res, ret) => {
+    let done = true;
+    setTimeout(() => {
+      if (done) {
+        console.log("Dinner completed ");
+        res("Dinner is done");
+      } else {
+        rej("Dinner is not done");
+      }
+    }, 2000);
+  })
+  return p
+}
+
+function goToPlayground() {
+  const p = new Promise((res, ret) => {
+    let done = true;
+    setTimeout(() => {
+      if (done) {
+        console.log("Went to the playground");
+        res("Playground time");
+      } else {
+        rej("Not allowed to go !");
+      }
+    }, 2000);
+  })
+  return p
+}
+
+doHomework().then((data)=>{
+  console.log(data)
+  return eatDinner()
+}).then((data)=>{
+  console.log(data)
+  return goToPlayground()
+}).then((data)=>{
+  console.log(data)
+}).catch((error)=>{
+  console.log(Error)
+}).finally(()=>{
+  console.log("Go to sleep")
+})
