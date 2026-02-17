@@ -289,61 +289,128 @@
 
 // console.log(homeworkPromise); 
 
-function doHomework() {
-  const p = new Promise((res, ret) => {
-    let done = true;
-    setTimeout(() => {
-      if (done) {
-        console.log("Homework completed");
-        res("Homework is done");
-      } else {
-        rej("Homework not completed");
-      }
-    }, 3000);
-  })
-  return p
-}
+// function doHomework() {
+//   const p = new Promise((res, rej) => {
+//     let done = true;
+//     setTimeout(() => {
+//       if (done) {
+//         console.log("Homework completed");
+//         res("Homework is done");
+//       } else {
+//         rej("Homework not completed");
+//       }
+//     }, 3000);
+//   })
+//   return p
+// }
 
-function eatDinner() {
-  const p = new Promise((res, ret) => {
-    let done = true;
-    setTimeout(() => {
-      if (done) {
-        console.log("Dinner completed ");
-        res("Dinner is done");
-      } else {
-        rej("Dinner is not done");
-      }
-    }, 2000);
-  })
-  return p
-}
+// function eatDinner() {
+//   const p = new Promise((res, rej) => {
+//     let done = true;
+//     setTimeout(() => {
+//       if (done) {
+//         console.log("Dinner completed ");
+//         res("Dinner is done");
+//       } else {
+//         rej("Dinner is not done");
+//       }
+//     }, 2000);
+//   })
+//   return p
+// }
 
-function goToPlayground() {
-  const p = new Promise((res, ret) => {
-    let done = true;
-    setTimeout(() => {
-      if (done) {
-        console.log("Went to the playground");
-        res("Playground time");
-      } else {
-        rej("Not allowed to go !");
-      }
-    }, 2000);
-  })
-  return p
-}
+// function goToPlayground() {
+//   const p = new Promise((res, rej) => {
+//     let done = true;
+//     setTimeout(() => {
+//       if (done) {
+//         console.log("Went to the playground");
+//         res("Playground time");
+//       } else {
+//         rej("Not allowed to go !");
+//       }
+//     }, 2000);
+//   })
+//   return p
+// }
 
-doHomework().then((data)=>{
-  console.log(data)
-  return eatDinner()
-}).then((data)=>{
-  console.log(data)
-  return goToPlayground()
-}).then((data)=>{
-  console.log(data)
-}).catch((error)=>{
-  console.log(Error)
-}).finally(()=>{
-  console.log("Go to sleep")
-})
+// doHomework().then((data)=>{
+//   console.log(data)
+//   return eatDinner()
+// }).then((data)=>{
+//   console.log(data)
+//   return goToPlayground()
+// }).then((data)=>{
+//   console.log(data)
+// }).catch((error)=>{
+//   console.log(Error)
+// }).finally(()=>{
+//   console.log("Go to sleep")
+// })
+
+
+// function orderFood() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log("Food ordered from the app");
+//             resolve();
+//         }, 2000);
+//     });
+// }
+
+// function prepareFood() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log("Restaurant prepared the food");
+//             resolve();
+//         }, 1000);
+//     });
+// }
+
+// function deliverFood() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             console.log("Delivery person delivered the food");
+//             resolve();
+//         }, 1000);
+//     });
+// }
+
+// async function foodorder() {
+//     await orderFood();
+//     await prepareFood();
+//     await deliverFood();
+//     console.log("Eating...");
+// }
+
+// foodorder();
+
+
+// async function getGreeting() {
+//     return "Hello from async!";
+// }
+// console.log("Calling the function...");
+// getGreeting().then((message) => {
+//     console.log("Received:", message);
+// });
+// console.log("Function call initiated.");
+
+
+
+console.log("first line")
+try{
+  // let sample = 345
+  // console.log(sample)
+  // console.log("Line after sample")
+  let age = 16
+  if (age<18){
+    console.log("You are minor")
+    throw new Error ("You are minor")
+  }
+  //
+}catch(e){
+  console.log(e)
+  console.log("Hello we got the error")
+}
+console.log("last line")
+
