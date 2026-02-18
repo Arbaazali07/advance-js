@@ -397,20 +397,51 @@
 
 
 
-console.log("first line")
-try{
-  // let sample = 345
-  // console.log(sample)
-  // console.log("Line after sample")
-  let age = 16
-  if (age<18){
-    console.log("You are minor")
-    throw new Error ("You are minor")
+// console.log("first line")
+// try{
+//   // let sample = 345
+//   // console.log(sample)
+//   // console.log("Line after sample")
+//   let age = 16
+//   if (age<18){
+//     // console.log("You are minor")
+//     throw new Error ("You are minor")
+//   }
+//   //
+// }catch(e){
+//   console.log(e)
+//   console.log("Hello we got the error")
+// }
+// console.log("last line")
+
+async function getData() {
+  try {
+       const response = await fetch("https://dummyjson.com/products/add",{
+        method: 'post',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          "title": "Macbook m4",
+          "description": "Lorem ipsm dolor sit amet.",
+          "category": "electronics.",
+          "price":999.8,
+          "discountPercentage": 10.48,
+          "rating":4.56,
+          "stock":99,    
+       })
+  })     
+  if (response.ok === false) {
+       throw new Error("Something went wrong");
+
   }
-  //
-}catch(e){
-  console.log(e)
-  console.log("Hello we got the error")
-}
-console.log("last line")
+    console.log(response)
+    const data = await response.json()
+    console.log(data)
+    data.products.forEach((product) => {
+      console.log(product.title)
+  })
+  } catch (e){
+     console.log(e)
+  }
+}  
+getData()
 
