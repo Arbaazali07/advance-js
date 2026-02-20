@@ -414,34 +414,33 @@
 // }
 // console.log("last line")
 
-async function getData() {
-  try {
-       const response = await fetch("https://dummyjson.com/products/add",{
-        method: 'post',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({
-          "title": "Macbook m4",
-          "description": "Lorem ipsm dolor sit amet.",
-          "category": "electronics.",
-          "price":999.8,
-          "discountPercentage": 10.48,
-          "rating":4.56,
-          "stock":99,    
-       })
-  })     
-  if (response.ok === false) {
-       throw new Error("Something went wrong");
+// 
 
-  }
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
-    data.products.forEach((product) => {
-      console.log(product.title)
-  })
-  } catch (e){
-     console.log(e)
-  }
-}  
-getData()
 
+// localStorage.setItem("name","Arbaaz")
+// localStorage.setItem("age",18)
+
+// const uname=localStorage.getItem("name")
+// console.log(uname)
+// console.log(localStorage.getItem("age"))
+
+// // localStorage.removeItem("name")
+// // localStorages.clear()
+
+// sessionStorage.setItem("name","Arbaaz")
+// sessionStorage.setItem("age",34)
+
+// const uname=sessionStorage.getItem("name")
+// console.log(uname)
+// console.log(sessionStorage.getItem("age"))
+
+// sessionStorage.removeItem("name")
+// sessionStorage.clear()
+
+document.cookie="name=Arbaaz ; expires=Thu, 28 feb 2026 12:00:00 UTC;"
+document.cookie="age=18; expires=Thu, 28 feb 2026 12:00:00 UTC;"
+
+async function fetchData(){
+  await fetch("file:///C:/Users/aliar/OneDrive/Desktop/web%20dev%20-%202/2sem.html")
+}
+fetchData()
