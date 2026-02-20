@@ -437,10 +437,32 @@
 // sessionStorage.removeItem("name")
 // sessionStorage.clear()
 
-document.cookie="name=Arbaaz ; expires=Thu, 28 feb 2026 12:00:00 UTC;"
-document.cookie="age=18; expires=Thu, 28 feb 2026 12:00:00 UTC;"
+// document.cookie="name=Arbaaz ; expires=Thu, 28 feb 2026 12:00:00 UTC;"
+// document.cookie="age=18; expires=Thu, 28 feb 2026 12:00:00 UTC;"
 
-async function fetchData(){
-  await fetch("file:///C:/Users/aliar/OneDrive/Desktop/web%20dev%20-%202/2sem.html")
+// async function fetchData(){
+//   await fetch("file:///C:/Users/aliar/OneDrive/Desktop/web%20dev%20-%202/2sem.html")
+// }
+// fetchData()
+
+// function add(a,b,c){
+//   return a+b+c
+// }
+
+function add(a){
+  return function(b){
+    return function(c){
+      return a+b+c
+    }
+  }
 }
-fetchData()
+
+const first=add(1)
+console.log(first)
+const second=first(2)
+console.log(second)
+const third=second(3)
+console.log(third)
+
+console.log(add(1)(2)(3))
+
